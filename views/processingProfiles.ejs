@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Processing Profile</title>
+</head>
+<body>
+    Business Name: <%= merchant.legal_name %>, Account ID: <%= merchant.account_id %>, Acceptor ID: <%= merchant.acceptor_id %>
+    <% if (locals.processingProfiles) { %>
+      <% processingProfiles.forEach(profile => { %>
+        <li>
+          Market Type: <%= profile.market_type %>, Terminal ID: <%= profile.terminal_id %>, Created Date: <%= profile.created_at %> <button><a href="">Remove</a></button>
+        </li>
+      <% }); %>
+    <% } %>
+    <br />
+    <form action="/merchants/<%= merchant.id %>/processing-profiles" method="POST">
+        Add Processing Profile: <br />
+        <label for="market_type">Market Type</label>
+        <select name="market_type">
+            <option value="retail">Retail</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="ecomm">Ecommerce</option>
+            <option value="moto">Direct Marketing (MOTO)</option>
+        </select>
+        <label for="terminal_id">Terminal ID</label>
+        <input type="text" name="terminal_id">
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
