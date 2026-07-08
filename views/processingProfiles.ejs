@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Processing Profile</title>
     <script src="/js/processingProfiles.js" defer></script>
+    <link rel="stylesheet" href="/css/processingProfilesStyles.css">
 </head>
 <body>
-    Business Name: <%= merchant.legal_name %>, Account ID: <%= merchant.account_id %>, Acceptor ID: <%= merchant.acceptor_id %>
+    <header class="merchant-profile-header">
+        <h2 class="merchant-title"><%= merchant.legal_name %></h2>
+        <div class="meta-badges">
+            <span class="badge"><strong>Account ID:</strong> <%= merchant.account_id %></span>
+            <span class="badge"><strong>Acceptor ID:</strong> <%= merchant.acceptor_id %></span>
+        </div>
+    </header>
     <% if (locals.processingProfiles) { %>
       <% processingProfiles.forEach(profile => { %>
         <li class="<%= merchant.id %>">
@@ -31,7 +38,7 @@
             <option value="moto">Direct Marketing (MOTO)</option>
         </select>
         <label for="terminal_id">Terminal ID</label>
-        <input type="text" inputmode="numeric" name="terminal_id" minlength="4" maxlength="4" required id="terminal_id">
+        <input type="text" name="terminal_id" minlength="4" maxlength="4" required id="terminal_id">
         <button type="submit">Submit</button>
     </form>
     <a href="/merchants">Back to Merchants List</a>

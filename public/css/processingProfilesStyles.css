@@ -1,0 +1,257 @@
+/* Core Base Reset for Minimalist Template */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1e222b;  /* Eva Dark Editor BG */
+    color: #cddecb;             /* Eva Dark Primary Font Color */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Layout grid track matching app standard widths */
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    gap: 16px;
+    max-width: 480px;           
+    margin: 0 auto;
+}
+
+/* --- New Gussied Up Header Block --- */
+.merchant-profile-header {
+    width: 100%;
+    background-color: #242936;  /* Eva Dark Card BG */
+    border: 1px solid #2e3445;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 8px;
+}
+
+.merchant-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4bc7cd;             /* Highlight name with Eva Teal */
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.meta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.badge {
+    background-color: #1e222b;  /* Deep contrast inner badge box */
+    border: 1px solid #2e3445;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    color: #cddecb;
+}
+
+.badge strong {
+    color: #7e879f;             /* Subtle color shift for label labels */
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    margin-right: 4px;
+}
+
+/* --- Profile Card Items Loop Container Styling --- */
+
+body > li {
+    list-style: none;
+    background-color: #242936;  
+    border: 1px solid #2e3445;  
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Individual Key Header Identifiers inside loop */
+body > li > h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #7e879f;             /* Eva Dark Muted Typography Accent */
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+body > li > h3:first-of-type {
+    margin-top: 0;
+}
+
+/* Dynamic element data nodes */
+body > li > p {
+    font-size: 1.05rem;
+    color: #cddecb;
+    font-weight: 500;
+    padding-bottom: 2px;
+}
+
+/* Inline form reset container */
+body > li > form[action*="/delete"] {
+    display: block !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 12px 0 0 0 !important;
+    width: auto !important;
+}
+
+/* Clear profile remove button scaling framework */
+body > li > form button[type="submit"] {
+    background-color: transparent;
+    color: #ff6e7a;             /* Eva Dark Accent Salmon Danger Accent */
+    border: 1px solid #ff6e7a;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+body > li > form button[type="submit"]:hover {
+    background-color: #ff6e7a;
+    color: #1e222b;
+    box-shadow: 0 0 10px rgba(255, 110, 122, 0.3);
+}
+
+
+/* Profile Danger Remove Action button */
+body > li > form button[type="submit"] {
+    background-color: transparent;
+    color: #ff6e7a;             /* Eva Dark Accent Salmon Danger Accent */
+    border: 1px solid #ff6e7a;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+body > li > form button[type="submit"]:hover {
+    background-color: #ff6e7a;
+    color: #1e222b;
+    box-shadow: 0 0 10px rgba(255, 110, 122, 0.3);
+}
+
+/* --- Profile Generation Form Block Architecture --- */
+
+form[action*="/processing-profiles"] {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    background-color: #242936;
+    border: 1px solid #2e3445;
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    
+    /* Formatting un-wrapped form banner text node */
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #cddecb;
+}
+
+form[action*="/processing-profiles"] label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #7e879f;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+/* Input boxes & Dropdown selectors element baseline framework */
+form[action*="/processing-profiles"] input,
+form[action*="/processing-profiles"] select {
+    background-color: #1e222b;
+    color: #cddecb;
+    border: 1px solid #2e3445;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+form[action*="/processing-profiles"] select {
+    cursor: pointer;
+}
+
+form[action*="/processing-profiles"] input:focus,
+form[action*="/processing-profiles"] select:focus {
+    outline: none;
+    border-color: #4bc7cd;      /* Eva Dark Accent Teal Focus Highlight */
+    box-shadow: 0 0 0 3px rgba(75, 199, 205, 0.15);
+}
+
+/* Action Execution button */
+form[action*="/processing-profiles"] button[type="submit"] {
+    background-color: transparent;
+    color: #4bc7cd;             
+    border: 1px solid #4bc7cd;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.2s ease;
+}
+
+form[action*="/processing-profiles"] button[type="submit"]:hover {
+    background-color: #4bc7cd;
+    color: #1e222b;
+    box-shadow: 0 0 12px rgba(75, 199, 205, 0.3);
+}
+
+/* --- Shared Navigation Button Styles --- */
+
+body > a[href="/merchants"] {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    color: #7e879f;             /* Eva Dark Muted Gray Accent */
+    border: 1px solid #2e3445;
+    background-color: #242936;
+    margin-top: 4px;
+}
+
+body > a[href="/merchants"]:hover {
+    color: #cddecb;
+    border-color: #7e879f;
+}
+
+/* Structural cleanup overrides for loose linebreaks */
+body > br {
+    display: none;
+}

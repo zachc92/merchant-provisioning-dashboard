@@ -42,5 +42,13 @@ document.querySelectorAll('p').forEach(text => {
 });
 
 document.querySelector('#terminal_id').addEventListener('input', (e) => {
-    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    const inputField = e.target;
+    
+    inputField.value = inputField.value.replace(/[^0-9]/g, '');
+
+    if (inputField.value.length < 4) {
+        inputField.setCustomValidity("Terminal ID must be exactly 4 digits.");
+    } else {
+        inputField.setCustomValidity("");
+    }
 });

@@ -1,0 +1,165 @@
+/* Core Base Reset for Minimalist Template */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1e222b;  /* Eva Dark Editor BG */
+    color: #cddecb;             /* Eva Dark Primary Font Color */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Layout positioning grid to pull bottom links side-by-side */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    gap: 16px;
+    max-width: 520px;           /* Sets baseline standard element bounding track */
+    margin: 0 auto;
+}
+
+/* Force headings and list elements to span full layout width */
+body > h3,
+body > li {
+    grid-column: 1 / span 2;
+}
+
+body > h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Individual Merchant Card Wrapper */
+body > li {
+    list-style: none;
+    background-color: #242936;  /* Eva Dark Sidebar / Card Background */
+    border: 1px solid #2e3445;  /* Eva Dark Subtle Border */
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    
+    /* Changed to Flexbox with wrap behavior to handle buttons tightly */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Force data text rows to break nicely and take full card width */
+body > li > p {
+    flex: 1 0 100%;
+    font-size: 0.95rem;
+    color: #cddecb;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+/* View Processing Profiles Link (Spans full width above action row) */
+body > li > a[href*="processing-profiles"] {
+    flex: 1 0 100%;
+    color: #4bc7cd;             /* Eva Dark Accent Teal */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 12px;       /* Adds breathing room before button row */
+}
+
+body > li > a[href*="processing-profiles"]:hover {
+    text-decoration: underline;
+}
+
+/* --- Inline Action Row (Update Link + Delete Form) --- */
+
+/* Force Update link and Delete form to sit directly side-by-side */
+body > li > a[href*="/update"] {
+    display: inline-block;
+    color: #b38bfc;             /* Eva Dark Accent Purple for Actions */
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #2e3445;
+    background-color: #1e222b;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-right: 8px;          /* Clean structural horizontal spacer */
+    transition: all 0.2s ease;
+}
+
+body > li > a[href*="/update"]:hover {
+    border-color: #b38bfc;
+    box-shadow: 0 0 10px rgba(179, 139, 252, 0.2);
+}
+
+body > li > form[action*="/delete"] {
+    display: inline-block;
+}
+
+/* Danger Inline Delete button configuration constraints */
+body > li > form button[type="submit"] {
+    background-color: transparent;
+    color: #ff6e7a;             /* Eva Dark Accent Salmon Danger Color */
+    border: 1px solid #ff6e7a;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+body > li > form button[type="submit"]:hover {
+    background-color: #ff6e7a;
+    color: #1e222b;
+    box-shadow: 0 0 10px rgba(255, 110, 122, 0.3);
+}
+
+/* --- Shared Navigation Button Row Layout Styles --- */
+
+body > a[href="/"],
+body > a[href="/merchants/add-merchant"] {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    transition: all 0.2s ease;
+}
+
+/* Home Button Specific Variant rules */
+body > a[href="/"] {
+    color: #7e879f;             /* Eva Dark Muted Gray Accent */
+    border: 1px solid #2e3445;
+    background-color: #242936;
+}
+
+body > a[href="/"]:hover {
+    color: #cddecb;
+    border-color: #7e879f;
+}
+
+/* Add Merchant Button Specific Variant rules */
+body > a[href="/merchants/add-merchant"] {
+    color: #4bc7cd;             /* Eva Dark Accent Teal Accent */
+    border: 1px solid #4bc7cd;
+    background-color: transparent;
+}
+
+body > a[href="/merchants/add-merchant"]:hover {
+    background-color: #4bc7cd;
+    color: #1e222b;
+    box-shadow: 0 0 12px rgba(75, 199, 205, 0.3);
+}

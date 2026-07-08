@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Merchant</title>
+    <link rel="stylesheet" href="/css/updateMerchantStyles.css">
+</head>
+<body>
+
+    <h3>Update Business Name</h3>
+    <h4><%= merchant.legal_name %></h4>
+    <form action="/merchants/<%= merchant.id %>/update" method="POST">
+        <label for="buinsess_name">New Business Name:</label>
+        <input type="text" name="business_name" minlength="4" required id="business_name">
+        <button type="submit">Submit</button>
+    </form>
+    <p style="color:red;"><%= locals.message %></p>
+    <a href="/">Home</a>
+    
+</body>
+</html>

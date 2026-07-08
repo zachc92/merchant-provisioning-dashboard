@@ -1,0 +1,146 @@
+/* Core Base Reset for Minimalist Template */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1e222b;  /* Eva Dark Editor BG */
+    color: #cddecb;             /* Eva Dark Primary Font Color */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Layout grid track matching app standard widths */
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    gap: 12px;
+    max-width: 440px;           /* Binds form width context seamlessly */
+    margin: 0 auto;
+}
+
+body > h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Current target merchant title display */
+body > h4 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #4bc7cd;             /* Eva Dark Accent Teal */
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* Form block architecture without changing classes */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    background-color: #242936;  /* Eva Dark Sidebar / Card Background */
+    border: 1px solid #2e3445;  /* Eva Dark Subtle Border */
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    text-align: left;
+}
+
+/* Individual field labels */
+form label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #7e879f;             /* Eva Dark Muted Comment Font Color */
+    letter-spacing: 0.5px;
+}
+
+/* Input fields */
+form input {
+    background-color: #1e222b;  /* Inner Input Slate Box */
+    color: #cddecb;
+    border: 1px solid #2e3445;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #b38bfc;      /* Eva Dark Accent Purple for Update context focus */
+    box-shadow: 0 0 0 3px rgba(179, 139, 252, 0.15);
+}
+
+/* Submission action button */
+form button[type="submit"] {
+    background-color: transparent;
+    color: #b38bfc;             /* Eva Dark Accent Purple Text */
+    border: 1px solid #b38bfc;  /* Eva Dark Accent Purple Border */
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #b38bfc;
+    color: #1e222b;             /* Inverse Text Color on hover */
+    box-shadow: 0 0 12px rgba(179, 139, 252, 0.3);
+}
+
+form button[type="submit"]:focus-visible {
+    outline: 2px solid #4bc7cd; 
+    outline-offset: 3px;
+}
+
+/* Dynamic Server-Side Error Alert Box Styling */
+body > p {
+    background-color: rgba(255, 110, 122, 0.1) !important;
+    border: 1px solid #ff6e7a !important; /* Eva Dark Accent Salmon Color */
+    color: #ff6e7a !important;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    margin-top: 4px;
+}
+
+/* Completely hide empty server error blocks until populated */
+body > p:empty {
+    display: none !important;
+}
+
+/* --- Shared Navigation Button Styles --- */
+
+body > a[href="/"] {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    color: #7e879f;             /* Eva Dark Muted Gray Accent */
+    border: 1px solid #2e3445;
+    background-color: #242936;
+    margin-top: 4px;
+}
+
+body > a[href="/"]:hover {
+    color: #cddecb;
+    border-color: #7e879f;
+}

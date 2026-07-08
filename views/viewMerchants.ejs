@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/viewMerchantsStyles.css">
 </head>
 <body>
-    This is the merchant view page.
-    <br />
-    <a href="/merchants/add-merchant">Add Merchant</a>
+    <h3>Merchant List</h3>
 
     <% if (locals.merchants) { %>
       <% merchants.forEach(merchant => { %>
         <li id="<%= merchant.acceptor_id %>">
-          Business Name: <%= merchant.legal_name %>, Account ID: <%= merchant.account_id %>, Acceptor ID: <%= merchant.acceptor_id %>
+          <p>Business Name: <%= merchant.legal_name %></p>
+          <p>Account ID: <%= merchant.account_id %></p>
+          <p>Acceptor ID: <%= merchant.acceptor_id %></p>
+          <p>Onboarding Date: <%= new Date(merchant.onboarding_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }) %></p>
           <a href="/merchants/<%= merchant.id %>/processing-profiles">Processing Profiles</a>
+          <a href="/merchants/<%= merchant.id %>/update">Update</a>
           <form action="/merchants/<%= merchant.id %>/delete" method="POST" style="display:inline;">
             <button type="submit">Delete</button>
           </form>
         </li>
       <% }); %>
     <% } %>
+    <a href="/">Home</a>
+    <a href="/merchants/add-merchant">Add Merchant</a>
 </body>
 </html>
-
-<!-- button submitter -> onclick="return confirm('Are you sure you want to delete this user?' -->

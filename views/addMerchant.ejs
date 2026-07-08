@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/js/addMerchant.js" defer></script>
+    <link rel="stylesheet" href="/css/addMerchantStyles.css">
 </head>
 <body>
 
-    This is the merchant add form.
+    <h3>Add Merchant</h3>
     <form action="/merchants/add-merchant" method="POST">
         <label for="buinsess_name">Business Name:</label>
         <input type="text" name="business_name" minlength="4" required id="business_name">
@@ -18,6 +19,8 @@
         <input type="text" name="acceptor_id" minlength="8" maxlength="50" required id="acceptor_id">
         <button type="submit">Submit</button>
     </form>
+    <p style="color:red;"><%= locals.message %></p>
+    <a href="/">Home</a>
     
 </body>
 </html>

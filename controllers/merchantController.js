@@ -16,13 +16,32 @@ export const showAddMerchantForm = (req, res) => {
 export async function addMerchant(req, res){
     const check = await db.addMerchant(req.body);
     if(check != undefined){
-        res.json({ responseMessage: check });
+        return res.render('addMerchant', { message: check });
     }
-    res.redirect('/');
+    res.redirect('/merchants');
 };
 
 export const deleteMerchant = (req, res) => {
     db.deleteMerchant(req.params.merchant_id);
+    res.redirect('/merchants');
+};
+
+export async function showUpdateMerchantForm(req, res){
+    const merchant = await db.getMerchant(req.params.merchant_id);
+    console.log(merchant);
+    res.render('updateMerchant', {
+        merchant: merchant
+    });
+};
+
+export async function updateMerchant(req, res){
+    const check = await db.updateMerchant(req.params.merchant_id, req.body.business_name);
+    if(check !== undefined){
+        return res.render('updateMerchant', { 
+            message: check,
+            merchant: await db.getMerchant(req.params.merchant_id)
+        });
+    }
     res.redirect('/merchants');
 };
 
@@ -36,7 +55,6 @@ export async function showProcessingProfileForm(req, res) {
 };
 
 export async function addProcessingProfile(req, res) {
-    console.log(Number(req.body.terminal_id));
     db.addProcessingProfile(req.params.merchant_id, req.body);
     res.redirect(`/merchants/${req.params.merchant_id}/processing-profiles`);
 };
