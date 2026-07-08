@@ -39,4 +39,8 @@ document.querySelectorAll('p').forEach(text => {
             text.textContent = 'Direct Marketing (MOTO)';
             break;
     }
-})
+});
+
+document.querySelector('#terminal_id').addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+});

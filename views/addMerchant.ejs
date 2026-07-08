@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/js/addMerchant.js" defer></script>
 </head>
 <body>
 
     This is the merchant add form.
     <form action="/merchants/add-merchant" method="POST">
         <label for="buinsess_name">Business Name:</label>
-        <input type="text" name="business_name">
+        <input type="text" name="business_name" minlength="4" required id="business_name">
         <label for="account_id">Account ID:</label>
-        <input type="text" name="account_id">
+        <input type="text" name="account_id" minlength="10" maxlength="10" required id="account_id">
         <label for="acceptor_id">Acceptor ID:</label>
-        <input type="text" name="acceptor_id">
+        <input type="text" name="acceptor_id" minlength="8" maxlength="50" required id="acceptor_id">
         <button type="submit">Submit</button>
     </form>
     

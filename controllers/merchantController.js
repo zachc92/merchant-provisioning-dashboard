@@ -36,6 +36,7 @@ export async function showProcessingProfileForm(req, res) {
 };
 
 export async function addProcessingProfile(req, res) {
+    console.log(Number(req.body.terminal_id));
     db.addProcessingProfile(req.params.merchant_id, req.body);
     res.redirect(`/merchants/${req.params.merchant_id}/processing-profiles`);
 };
