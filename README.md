@@ -19,9 +19,9 @@ This sample application is a full-stack management panel designed to simulate a 
 
 ### Prerequisites
 
-Ensure you have the following installed on your machine:
+You will need the following installed on your machine:
 *   [Node.js](https://nodejs.org) (v20.6.0+ required for native `--env-file` flags)
-*   [PostgreSQL](https://postgresql.org) database engine
+*   [PostgreSQL](https://postgresql.org)
 
 1. Clone the Repository
 ```bash
@@ -50,7 +50,7 @@ DB_PASSWORD=your_postgres_password
 
 4. Run the Development Server
 
-This application uses Node's native watch mode to automatically restart when code changes are detected.
+This application uses Node's watch mode to automatically restart when code changes are detected.
 
 ```bash
 npm run dev-start
