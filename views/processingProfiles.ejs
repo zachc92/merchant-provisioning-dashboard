@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Processing Profile</title>
+    <script src="/js/processingProfiles.js" defer></script>
 </head>
 <body>
     Business Name: <%= merchant.legal_name %>, Account ID: <%= merchant.account_id %>, Acceptor ID: <%= merchant.acceptor_id %>
     <% if (locals.processingProfiles) { %>
       <% processingProfiles.forEach(profile => { %>
-        <li>
-          Market Type: <%= profile.market_type %>, Terminal ID: <%= profile.terminal_id %>, Created Date: <%= profile.created_at %> <button><a href="">Remove</a></button>
+        <li class="<%= merchant.id %>">
+          <h3>Market Type</h3><p id="<%= profile.market_type %>"><%= profile.market_type %></p>
+          <h3>Terminal ID</h3><p id="<%= profile.terminal_id %>"><%= profile.terminal_id %></p>
+          <form action="/merchants/<%= merchant.id %>/processing-profiles/delete" method="POST" style="display:inline;">
+            <button type="submit">Remove</button>
+          </form>
+          
         </li>
       <% }); %>
     <% } %>
@@ -28,6 +34,7 @@
         <input type="text" name="terminal_id">
         <button type="submit">Submit</button>
     </form>
+    <a href="/merchants">Back to Merchants List</a>
     
 </body>
 </html>
